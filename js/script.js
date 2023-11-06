@@ -46,14 +46,25 @@ const numbersInWriting = [
   "tio",
 ];
 
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// loop to create outer lists
 for (let i = 0; i <= 2; i++) {
   let listEl = document.createElement("ul");
   listEl.style.backgroundColor = fontColor;
   listEl.style.listStyle = "none";
   divEl.appendChild(listEl);
+
+  // inner loop to create inner listitems
   for (let j = 0; j <= 9; j++) {
     let listItemEl = document.createElement("li");
-    if ((i = 2)) {
+    listItemEl.style.margin = "5px";
+
+    if (i == 0) {
+      listItemEl.textContent = j;
+    }
+
+    if (i == 2) {
       listItemEl.textContent = numbersInWriting[j];
     }
     listEl.appendChild(listItemEl);
