@@ -64,11 +64,11 @@ for (let i = 0; i <= 2; i++) {
   listEl.style.height = "200px";
   listEl.style.width = "80px";
   listEl.style.listStyle = "none";
-  listEl.style.display ="flex";
-  listEl.style.flexDirection ="column";
+  listEl.style.display = "flex";
+  listEl.style.flexDirection = "column";
   listEl.style.justifyContent = "center";
   listEl.style.alignItems = "center";
-  listEl.style.paddingInlineStart = "0"
+  listEl.style.paddingInlineStart = "0";
   divEl.appendChild(listEl);
 
   // inner loop to create inner listitems
@@ -79,20 +79,19 @@ for (let i = 0; i <= 2; i++) {
     listItemEl.style.backgroundColor = "white";
     listItemEl.style.width = "60%";
 
-    if(j % 2 === 0){
+    if (j % 2 === 0) {
       listItemEl.style.backgroundColor = "black";
-      listItemEl.style.color ="white";
+      listItemEl.style.color = "white";
     }
-    
-    if (i == 0 ) {
+
+    if (i == 0) {
       listItemEl.textContent = j;
     }
 
-    if (i == 1){
+    if (i == 1) {
       listItemEl.textContent = j;
       listEl.style.flexDirection = "column-reverse";
       listItemEl.style.textAlign = "center";
-
     }
 
     if (i == 2) {
@@ -100,9 +99,6 @@ for (let i = 0; i <= 2; i++) {
       listItemEl.style.textAlign = "right";
     }
 
-
     listEl.appendChild(listItemEl);
-
   }
 }
-
