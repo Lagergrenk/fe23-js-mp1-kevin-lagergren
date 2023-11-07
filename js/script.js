@@ -74,6 +74,8 @@ for (let i = 0; i <= 2; i++) {
   // inner loop to create inner listitems
   for (let j = 0; j <= 9; j++) {
     let listItemEl = document.createElement("li");
+
+    // CSS for listitems
     listItemEl.style.backgroundColor = "white";
     listItemEl.style.width = "60%";
 
@@ -82,7 +84,7 @@ for (let i = 0; i <= 2; i++) {
       listItemEl.style.color ="white";
     }
     
-    if (i == 0) {
+    if (i == 0 ) {
       listItemEl.textContent = j;
     }
 
