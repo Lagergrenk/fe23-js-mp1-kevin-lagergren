@@ -3,6 +3,11 @@ const fontSizes = ["x-small", "small", "medium", "large", "x-large"];
 const fontAndBCGColor = "hsl(233, 70%, 75%)";
 let colorCounter = 140;
 
+// Box sizing = border-box
+document.body.style.margin = "0";
+document.body.style.padding = "0";
+document.body.style.boxSizing = "border-box";
+
 for (let i = 0; i < rowNumbers.length; i++) {
   // Creating h1 elements
   let h1El = document.createElement("h1");
@@ -53,33 +58,49 @@ const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 // loop to create outer lists
 for (let i = 0; i <= 2; i++) {
   let listEl = document.createElement("ul");
+
+  // Alot of css
   listEl.style.backgroundColor = fontAndBCGColor;
+  listEl.style.height = "200px";
+  listEl.style.width = "80px";
   listEl.style.listStyle = "none";
-  listEl.style.margin = "10px";
   listEl.style.display ="flex";
   listEl.style.flexDirection ="column";
+  listEl.style.justifyContent = "center";
+  listEl.style.alignItems = "center";
+  listEl.style.paddingInlineStart = "0"
   divEl.appendChild(listEl);
 
   // inner loop to create inner listitems
   for (let j = 0; j <= 9; j++) {
     let listItemEl = document.createElement("li");
-    listItemEl.style.margin = "5px";
-    
+    listItemEl.style.backgroundColor = "white";
+    listItemEl.style.width = "60%";
 
+    if(j % 2 === 0){
+      listItemEl.style.backgroundColor = "black";
+      listItemEl.style.color ="white";
+    }
+    
     if (i == 0) {
       listItemEl.textContent = j;
-      listEl.style.justifyContent = "flex-start";
     }
 
-    if(i == 1){
+    if (i == 1){
       listItemEl.textContent = j;
       listEl.style.flexDirection = "column-reverse";
+      listItemEl.style.textAlign = "center";
 
     }
 
     if (i == 2) {
       listItemEl.textContent = numbersInWriting[j];
+      listItemEl.style.textAlign = "right";
     }
+
+
     listEl.appendChild(listItemEl);
+
   }
 }
+
