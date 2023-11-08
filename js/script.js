@@ -1,19 +1,34 @@
-const rowNumbers = ["Rad 1", "Rad 2", "Rad 3", "Rad 4", "Rad 5"];
 const fontSizes = ["x-small", "small", "medium", "large", "x-large"];
 const fontAndBCGColor = "hsl(233, 70%, 75%)";
 let colorCounter = 140;
+
+// Array with numbers in writing
+const numbersInWriting = [
+  "ett",
+  "två",
+  "tre",
+  "fyra",
+  "fem",
+  "sex",
+  "sju",
+  "åtta",
+  "nio",
+  "tio",
+];
+
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // Box sizing = border-box
 document.body.style.margin = "0";
 document.body.style.padding = "0";
 document.body.style.boxSizing = "border-box";
 
-for (let i = 0; i < rowNumbers.length; i++) {
+for (let i = 0; i < 5; i++) {
   // Creating h1 elements
   let h1El = document.createElement("h1");
 
   // Adding text i++
-  h1El.innerText = rowNumbers[i];
+  h1El.innerText = `Rad ${numbers[i+1]}`;
 
   // Changing fontsize
   h1El.style.fontSize = fontSizes[i];
@@ -39,21 +54,7 @@ divEl.style.display = "flex";
 divEl.style.justifyContent = "space-around";
 document.body.appendChild(divEl);
 
-// Array with numbers in writing
-const numbersInWriting = [
-  "ett",
-  "två",
-  "tre",
-  "fyra",
-  "fem",
-  "sex",
-  "sju",
-  "åtta",
-  "nio",
-  "tio",
-];
 
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // loop to create outer lists
 for (let i = 0; i <= 2; i++) {
@@ -85,16 +86,25 @@ for (let i = 0; i <= 2; i++) {
     }
 
     if (i == 0) {
-      listItemEl.textContent = j;
+      listItemEl.textContent = numbers[j];
+      if(j == 4){
+        listItemEl.style.backgroundColor = fontAndBCGColor;
+      }
     }
 
     if (i == 1) {
-      listItemEl.textContent = j;
+      listItemEl.textContent = numbers[j];
       listEl.style.flexDirection = "column-reverse";
       listItemEl.style.textAlign = "center";
+      if(j == 8){
+        listItemEl.style.backgroundColor = fontAndBCGColor;
+      }
     }
 
     if (i == 2) {
+      if(j == 5){
+        listItemEl.style.backgroundColor = fontAndBCGColor;
+      }
       listItemEl.textContent = numbersInWriting[j];
       listItemEl.style.textAlign = "right";
     }
