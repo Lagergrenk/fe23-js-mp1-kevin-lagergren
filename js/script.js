@@ -16,6 +16,7 @@ const numbersInWriting = [
   "tio",
 ];
 
+// Array with numbers
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // Box sizing = border-box
@@ -28,7 +29,7 @@ for (let i = 0; i < 5; i++) {
   let h1El = document.createElement("h1");
 
   // Adding text i++
-  h1El.innerText = `Rad ${numbers[i+1]}`;
+  h1El.innerText = `Rad ${numbers[i + 1]}`;
 
   // Changing fontsize
   h1El.style.fontSize = fontSizes[i];
@@ -54,8 +55,6 @@ divEl.style.display = "flex";
 divEl.style.justifyContent = "space-around";
 document.body.appendChild(divEl);
 
-
-
 // loop to create outer lists
 for (let i = 0; i <= 2; i++) {
   let listEl = document.createElement("ul");
@@ -80,14 +79,16 @@ for (let i = 0; i <= 2; i++) {
     listItemEl.style.backgroundColor = "white";
     listItemEl.style.width = "60%";
 
+
     if (j % 2 === 0) {
       listItemEl.style.backgroundColor = "black";
       listItemEl.style.color = "white";
     }
 
+    // Nested if == blääää
     if (i == 0) {
       listItemEl.textContent = numbers[j];
-      if(j == 4){
+      if (j == 4) {
         listItemEl.style.backgroundColor = fontAndBCGColor;
       }
     }
@@ -96,13 +97,13 @@ for (let i = 0; i <= 2; i++) {
       listItemEl.textContent = numbers[j];
       listEl.style.flexDirection = "column-reverse";
       listItemEl.style.textAlign = "center";
-      if(j == 8){
+      if (j == 8) {
         listItemEl.style.backgroundColor = fontAndBCGColor;
       }
     }
 
     if (i == 2) {
-      if(j == 5){
+      if (j == 5) {
         listItemEl.style.backgroundColor = fontAndBCGColor;
       }
       listItemEl.textContent = numbersInWriting[j];
