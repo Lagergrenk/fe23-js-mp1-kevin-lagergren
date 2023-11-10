@@ -84,8 +84,6 @@ for (let i = 0; i <= 2; i++) {
       listItemEl.style.color = "white";
     }
 
-    // Nested if == blääää
-
     switch (i) {
       case 0:
         listItemEl.textContent = numbers[j];
@@ -111,7 +109,6 @@ for (let i = 0; i <= 2; i++) {
       default:
         break;
     }
-
 
     listEl.appendChild(listItemEl);
   }
