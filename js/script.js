@@ -35,7 +35,7 @@ for (let i = 0; i < 5; i++) {
   h1El.style.fontSize = fontSizes[i];
 
   // Chaning background
-  h1El.style.backgroundColor = `hsl(${colorCounter}, 100%, 55%)`;
+  h1El.style.backgroundColor = `hsl(${colorCounter}, 100%, 80%)`;
   colorCounter += 10;
 
   //Changing text color
@@ -79,36 +79,39 @@ for (let i = 0; i <= 2; i++) {
     listItemEl.style.backgroundColor = "white";
     listItemEl.style.width = "60%";
 
-
     if (j % 2 === 0) {
       listItemEl.style.backgroundColor = "black";
       listItemEl.style.color = "white";
     }
 
     // Nested if == blääää
-    if (i == 0) {
-      listItemEl.textContent = numbers[j];
-      if (j == 4) {
-        listItemEl.style.backgroundColor = fontAndBCGColor;
-      }
+
+    switch (i) {
+      case 0:
+        listItemEl.textContent = numbers[j];
+        if (j == 4) {
+          listItemEl.style.backgroundColor = fontAndBCGColor;
+        }
+        break;
+      case 1:
+        listItemEl.textContent = numbers[j];
+        listEl.style.flexDirection = "column-reverse";
+        listItemEl.style.textAlign = "center";
+        if (j == 8) {
+          listItemEl.style.backgroundColor = fontAndBCGColor;
+        }
+        break;
+      case 2:
+        if (j == 5) {
+          listItemEl.style.backgroundColor = fontAndBCGColor;
+        }
+        listItemEl.textContent = numbersInWriting[j];
+        listItemEl.style.textAlign = "right";
+        break;
+      default:
+        break;
     }
 
-    if (i == 1) {
-      listItemEl.textContent = numbers[j];
-      listEl.style.flexDirection = "column-reverse";
-      listItemEl.style.textAlign = "center";
-      if (j == 8) {
-        listItemEl.style.backgroundColor = fontAndBCGColor;
-      }
-    }
-
-    if (i == 2) {
-      if (j == 5) {
-        listItemEl.style.backgroundColor = fontAndBCGColor;
-      }
-      listItemEl.textContent = numbersInWriting[j];
-      listItemEl.style.textAlign = "right";
-    }
 
     listEl.appendChild(listItemEl);
   }
